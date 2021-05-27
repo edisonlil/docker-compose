@@ -11,7 +11,7 @@
 adduser admin
 ```
 
-2.并密码初始为`edc3000.`
+2. 并密码初始为`edc3000.`
 
 ```shell script
 passwd admin
@@ -19,6 +19,10 @@ passwd admin
 
 3. 将`docker-compose.yml`中的`{Your Host}`替换成自己当前服务器的本机IP
 
+
+#### Nginx部分
+
+----
 
 4. 在当前目录下创建`./conf/nginx`目录
 
