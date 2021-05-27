@@ -1,6 +1,6 @@
 ####  Nginx
 
-1.在当前目录下创建`nginx.conf`配置文件
+1. 在当前目录下创建`nginx.conf`配置文件
 
 ```smartyconfig
 user  nginx;
@@ -34,13 +34,13 @@ http {
 }
 ```
 
-2.在当前目录创建`conf.d`目录
+2. 在当前目录创建`conf.d`目录
 
 ```shell script
 mkdir conf.d
 ```
 
-3.在`conf.d`目录下创建`default.conf`配置文件
+3. 在`conf.d`目录下创建`default.conf`配置文件
 
 ```smartyconfig
 server {
@@ -92,13 +92,13 @@ server {
 }
 ```
 
-4.在当前目录创建`res`目录
+4. 在当前目录创建`res`目录
 
 ```shell script
 mkdir res
 ```
 
-5.在`res`目录下创建`index.html`测试文件
+5. 在`res`目录下创建`index.html`测试文件
 ```html
 <html>
     <body>
@@ -107,7 +107,7 @@ mkdir res
 </html>
 ```
 
-6.在当前目录执行该命令运行容器
+6. 在当前目录执行该命令运行容器
 
 ```
 docker-compose up -d
