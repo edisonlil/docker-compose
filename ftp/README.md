@@ -1,4 +1,4 @@
-### FTP文件服务器
+### FTP 文件服务器
 
 该`Docker Compose`文件共描述了两个中间件,`fauria/vsftpd`和`nginx`，`vsftpd`作为文件服务器，提供文件上传的功能。
 `nginx`作为代理服务器提供`http`的方式访问和下载我们上传到`vsftpd`中的文件。
