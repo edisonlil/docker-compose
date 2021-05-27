@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  activemq:
+    image: webcenter/activemq
+    ports:
+     - 61616:61616
+     - 8161:8161
+    restart: always
+    volumes:
+     - ./data/activemq:/data/activemq
+     - ./var/log/activemq:/var/log/activemq
+

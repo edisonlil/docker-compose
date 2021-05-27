@@ -107,7 +107,7 @@ mkdir res
 </html>
 ```
 
-6. 在当前目录执行该命令运行容器
+6. 执行`docker-compose`文件
 
 ```
 docker-compose up -d

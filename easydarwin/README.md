@@ -22,7 +22,7 @@ EasyDarwin本身提供了一个高性能的服务端框架，Linux/Windows跨平
 
 ### 视频流转RTSP流协议
 
-1. 启动**easydarwin**流服务器
+1. 执行`docker-compose`文件
 
 ```shell
 docker-compose up -d

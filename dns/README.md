@@ -464,8 +464,8 @@ interface=eth1
 
 ```
 
-2. 在当前目录执行该命令运行容器
-   
+2. 执行`docker-compose`文件
+
 ```shell script
 docker-compose up -d
 ```
