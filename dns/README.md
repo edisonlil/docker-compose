@@ -1,6 +1,6 @@
 ### DNS服务器
 
-1. 创建默认`dnsmasq.conf`
+1. 在当前目录下创建默认`dnsmasq.conf`
 
 ```smartyconfig
 #dnsmasq config, for a complete example, see:
