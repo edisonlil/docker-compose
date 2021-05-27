@@ -1,4 +1,4 @@
-####  Docker容器部署Nginx
+####  Nginx
 
 1.在当前目录下创建`nginx.conf`配置文件
 
