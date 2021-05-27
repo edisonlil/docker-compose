@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  dnsmasq:
+    image: jpillora/dnsmasq
+    container_name: dnsmasq
+    ports:
+     - 8080:8080
+     - 53:53
+    network_mode: host
+    environment:
+      HTTP_USER: admin
+      HTTP_PASS: edc3000.
+    restart: always
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+
+
+
