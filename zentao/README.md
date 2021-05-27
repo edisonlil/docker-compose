@@ -1,5 +1,7 @@
 ### 禅道
 
+
+
 1. 创建`/data/zentao`目录
 
 ```shell script

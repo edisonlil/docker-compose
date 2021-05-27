@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+ plash:
+  container_name: splash
+  image: scrapinghub/splash
+  restart: always
+  ports:
+   - "8050:8050"
+   - "8051:8051"
+  command: splash --max-timeout 13600
+
