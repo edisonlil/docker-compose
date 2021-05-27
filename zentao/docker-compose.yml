@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+ zentao:
+  image: idoop/zentao:latest
+  container_name: zentao
+  restart: always
+  environment:
+   ADMINER_USER: 'admin'
+   ADMINER_PASSWD: 'edc3000.'
+   BIND_ADDRESS: 'false'
+  ports:
+   - 9789:80
+  volumes:
+   - /etc/localtime:/etc/localtime:ro
+   - /etc/timezone:/etc/timezone
+   - /data/zentao:/opt/zbox/
+
