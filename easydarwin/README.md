@@ -10,13 +10,13 @@ EasyDarwin本身提供了一个高性能的服务端框架，Linux/Windows跨平
 
 ##### 支持
 
-1.标准RTSP/RTP推送直播；
-2.接入EasyDarwin流媒体云平台，分布式、多点部署；
+1. 标准RTSP/RTP推送直播
+2. 接入EasyDarwin流媒体云平台，分布式、多点部署；
 
 ##### 开发中...。
 
-1.EasyDarwin Web管理后台；
-2.EasyDarwin商用流媒体点播与直播服务器；
+1. EasyDarwin Web管理后台
+2. EasyDarwin商用流媒体点播与直播服务器；
 
 ----
 
