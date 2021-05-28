@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  php:
+    image: php:7.4-fpm
+    restart: always
+    container_name: php
+
