@@ -24,12 +24,12 @@ EasyDarwin本身提供了一个高性能的服务端框架，Linux/Windows跨平
 
 1. 执行`docker-compose`文件
 
-```shell
+```shell script
 docker-compose up -d
 ```
 
 2. 通过服务器**ffmpeg**转流
 
-```shell
+```shell script
 ffmpeg -re -i 视频流地址  -rtsp_transport tcp -vcodec h264 -f rtsp rtsp://localhost:554/{path}
 ```

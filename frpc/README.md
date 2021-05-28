@@ -25,6 +25,6 @@ custom_domains=www.frpcproxy.com
 
 2. 执行`docker-compose`文件
 
-```shell
+```shell script
 docker-compose up -d
 ```
