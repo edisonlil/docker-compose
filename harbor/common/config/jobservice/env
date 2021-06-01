@@ -1,0 +1,8 @@
+CORE_SECRET=m3uyHS91ey0jcQ2Q
+JOBSERVICE_SECRET=25RVouVEwYXo2pyi
+CORE_URL=http://core:8080
+JOBSERVICE_WEBHOOK_JOB_MAX_RETRY=10
+
+HTTP_PROXY=
+HTTPS_PROXY=
+NO_PROXY=127.0.0.1,localhost,.local,.internal,log,db,redis,nginx,core,portal,postgresql,jobservice,registry,registryctl,clair
