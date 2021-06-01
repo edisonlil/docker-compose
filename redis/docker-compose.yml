@@ -7,6 +7,6 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - $PWD/redis:/etc/redis
+      - ./conf:/etc/redis
     command: redis-server /etc/redis/redis.conf
 
