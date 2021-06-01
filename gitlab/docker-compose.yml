@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+ gitlab:
+  image: 'twang2218/gitlab-ce-zh:11.1.4'
+  hostname: gitlab
+  privileged: true
+  restart: always
+  ports:
+   - '9980:80'
+   - '9443:443'
+  volumes:
+   - /etc/gitlab:/etc/gitlab
+   - /data/gitlab:/var/opt/gitlab
+   - /var/log/gitlab:/var/log/gitlab
+  environment:
+   TZ: 'Asia/Shanghai'
+   GITLAB_OMNIBUS_CONFIG: |
+    external_url 'http://115.159.157.148'
+    gitlab_rails['time_zone'] = 'Asia/Shanghai'
+    gitlab_rails['smtp_enable'] = true
+    gitlab_rails['smtp_address'] = 'smtp.163.com'
+    gitlab_rails['smtp_port'] = '465'
+    gitlab_rails['smtp_user_name'] = 'edisonlil@163.com'
+    gitlab_rails['smtp_password'] = 'KSFHTAYNKESWKJGT'
+    gitlab_rails['smtp_domain'] = '163.com'
+    gitlab_rails['smtp_authentication'] = 'login'
+    gitlab_rails['smtp_enable_starttls_auto'] = true
+    gitlab_rails['smtp_tls'] = true
+    gitlab_rails['smtp_email_from'] = 'edisonlil@163.com'
+    gitlab_rails['gitlab_email_from'] = 'edisonlil@163.com'
+    gitlab_rails['gitlab_shell_ssh_port'] = 22
+    user['git_user_email'] = 'edisonlil@163.com'
