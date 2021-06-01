@@ -1,7 +1,7 @@
 
 ### mysql
 
-1.将`docker-compose.yml`中的`{PWD}`替换成自己当前数据库的root密码
+1.将`docker-compose.yml`中的`{PWD}`替换成自己当前数据库的`root`密码
 
 
 2.在根目录下创建 `/data/mysql/data` 目录
