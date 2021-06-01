@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  redis:
+    image: redis:5.0.8
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - $PWD/redis:/etc/redis
+    command: redis-server /etc/redis/redis.conf
+
