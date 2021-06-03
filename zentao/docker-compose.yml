@@ -5,8 +5,8 @@ services:
   container_name: zentao
   restart: always
   environment:
-   ADMINER_USER: 'admin'
-   ADMINER_PASSWD: 'edc3000.'
+   ADMINER_USER: {USER}
+   ADMINER_PASSWD: {PASSWD}
    BIND_ADDRESS: 'false'
   ports:
    - 9789:80
