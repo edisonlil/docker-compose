@@ -1,14 +1,17 @@
 ### MongoDB
 
+1.创建`/data/mongo/data/db`目录
 
-1. 创建`/data/mongo/data/db`目录
-
-```shell script
+```
 mkdir -p /data/mongo/data/db
 ```
 
-2. 执行`docker-compose`文件
+2.将`docker-compose.yml`中的`{USERNAME}`替换成初始化数据库 `root` 名称
 
-```shell script
+3.将`docker-compose.yml`中的`{PASSWORD}`替换成初始化数据库`root`密码
+
+4.执行`docker-compose`文件
+
+```
 docker-compose up -d
 ```

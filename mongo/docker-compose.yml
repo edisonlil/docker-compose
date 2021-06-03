@@ -9,8 +9,8 @@ services:
     volumes:
       - /data/mongo/data/db:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 5ec8dc7ad047815cf7dd7165
+      MONGO_INITDB_ROOT_USERNAME: {USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: {PASSWORD}
   mongo-express:
     image: mongo-express
     restart: always
