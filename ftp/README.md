@@ -19,12 +19,12 @@ passwd admin
 
 3.将`docker-compose.yml`中的`{Your Host}`替换成自己当前服务器的本机IP
 
-4.在当前目录下创建`./conf/nginx`目录
+4.在当前目录下创建`./conf/vsftpd`目录
 ```
-mkdir ./vsftpd | mkdir ./conf/nginx
+mkdir -p ./conf/vsftpd
 ```
 
-5.在`./conf/nginx`目录下创建`ftpusers`文件
+5.在`./conf/vsftpd`目录下创建`ftpusers`文件
 
 ```
 # Users that are not allowed to login via ftp
@@ -42,14 +42,12 @@ uucp
 operator
 games
 nobody
-
 ```
 
 
-6.在`./conf/nginx`目录下创建`user_list`文件
+6.在`./conf/vsftpd`目录下创建`user_list`文件
 
 ```
-
 # vsftpd userlist
 # If userlist_deny=NO, only allow users in this file
 # If userlist_deny=YES (default), never allow users in this file, and
@@ -70,7 +68,6 @@ uucp
 operator
 games
 nobody
-
 ```
 
 #### Nginx部分
@@ -79,8 +76,8 @@ nobody
 
 7.在当前目录下创建`./conf/nginx`目录
 
-```
-mkdir ./conf | mkdir ./conf/nginx
+``` 
+mkdir -p ./conf/nginx
 ```
 
 8.在`./conf/nginx`目录下创建`nginx.conf`配置文件
