@@ -5,32 +5,85 @@
 
 #### Ftp部分
 
-1. 创建`admin`用户作为ftp文件服务器用户
+1.创建`admin`用户作为ftp文件服务器用户
 
-```shell script
+```
 adduser admin
 ```
 
-2. 并密码初始为`edc3000.`
+2.并密码初始为`edc3000.`
 
-```shell script
+```
 passwd admin
 ```
 
-3. 将`docker-compose.yml`中的`{Your Host}`替换成自己当前服务器的本机IP
+3.将`docker-compose.yml`中的`{Your Host}`替换成自己当前服务器的本机IP
 
+4.在当前目录下创建`./conf/nginx`目录
+```
+mkdir ./vsftpd | mkdir ./conf/nginx
+```
+
+5.在`./conf/nginx`目录下创建`ftpusers`文件
+
+```
+# Users that are not allowed to login via ftp
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+news
+uucp
+operator
+games
+nobody
+
+```
+
+
+6.在`./conf/nginx`目录下创建`user_list`文件
+
+```
+
+# vsftpd userlist
+# If userlist_deny=NO, only allow users in this file
+# If userlist_deny=YES (default), never allow users in this file, and
+# do not even prompt for a password.
+# Note that the default vsftpd pam config also checks /etc/vsftpd/ftpusers
+# for users that are denied.
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+news
+uucp
+operator
+games
+nobody
+
+```
 
 #### Nginx部分
 
 ----
 
-4. 在当前目录下创建`./conf/nginx`目录
+7.在当前目录下创建`./conf/nginx`目录
 
-```shell script
+```
 mkdir ./conf | mkdir ./conf/nginx
 ```
 
-5. 在`./conf/nginx`目录下创建`nginx.conf`配置文件
+8.在`./conf/nginx`目录下创建`nginx.conf`配置文件
 
 ```smartyconfig
 user  nginx;
@@ -64,13 +117,13 @@ http {
 }
 ```
 
-6. 在`./conf/nginx`目录下创建`conf.d`目录
+9.在`./conf/nginx`目录下创建`conf.d`目录
 
-```shell script
+```
 mkdir conf.d
 ```
 
-7. 在`conf.d`目录下创建`default.conf`配置文件
+10.在`conf.d`目录下创建`default.conf`配置文件
 
 ```smartyconfig
 server{
@@ -88,8 +141,8 @@ location / {
 }
 ```
 
-8. 执行`docker-compose`文件
+11.执行`docker-compose`文件
    
-```shell script
+```
 docker-compose up -d
 ```
