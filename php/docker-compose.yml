@@ -1,7 +1,10 @@
 version: '3.1'
 services:
   php:
-    image: php:7.4-fpm
+    image: php-ext:7.4-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     container_name: php
     ports:
