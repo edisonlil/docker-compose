@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  rsync-server:
+    image: rsync-server:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 873:873
+    volumes:
+      - ./data:/data
+      - ./config/rsyncd.conf:/etc/rsyncd.conf
