@@ -10,7 +10,7 @@ man rsync
 
 1.创建`rsyncd.conf`文件,并挂载到容器的`/etc`目录中
 
-```editorconfig
+```config
 #用户 远端命令使用rsync访问共享目录
 uid = root
 #用户组
