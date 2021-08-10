@@ -1,0 +1,52 @@
+version: "3"
+
+networks:
+  loki:
+
+services:
+  loki:
+    image: grafana/loki
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=zh_CN.UTF-8
+    ports:
+      - 3100:3100
+    networks:
+      - loki
+
+  promtail:
+    image: grafana/promtail
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=zh_CN.UTF-8
+    networks:
+      - loki
+
+  grafana:
+    image: grafana/grafana:7.1.5
+    restart: always
+    environment:
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_LOG_FILTERS: rendering:debug
+    ports:
+      - 3000:3000
+    volumes:
+      - ./config/grafana.ini:/etc/grafana/grafana.ini
+    networks:
+      - loki
+
+  renderer:
+    image: grafana/grafana-image-renderer:latest
+    ports:
+      - 8081
+    networks:
+      - loki
+        # volumes:
+        # - ./ch/public:/usr/share/grafana/public
+        # - ./ch/bin/linux-amd64/grafana-server:/usr/sbin/grafana-server
+        # - ./ch/bin/linux-amd64/grafana-server.md5:/usr/sbin/grafana-server.md5
+        # - ./ch/bin/linux-amd64/grafana-cli:/usr/sbin/grafana-cli
+        # - ./ch/bin/linux-amd64/grafana-cli.md5:/usr/sbin/grafana-cli.md5
