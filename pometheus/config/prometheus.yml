@@ -1,0 +1,40 @@
+# 全局配置
+global:
+  scrape_interval: 15s # 将抓取间隔设置为每 15 秒一次。默认为每 1 分钟.
+  evaluation_interval: 15s # 每 15 秒评估一次规则。默认为每 1 分钟.
+  # scrape_timeout 设置为全局默认值（10 秒）.
+
+# 警报管理器配置
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# 加载规则一次并根据全局“evaluation_interval”定期评估它们.
+rule_files:
+  - "node_down.yml"
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# 一个只包含一个要抓取的端点的抓取配置:
+# 普罗米修斯.
+scrape_configs:
+  #作业名称作为标签“job=<job_name>”添加到从此配置中抓取的任何时间序列中.
+  - job_name: 'prometheus'
+
+    # metrics_path 默认为“/metrics”
+    # 方案默认为“http”。
+
+    static_configs:
+      - targets: ['192.168.1.57:9090']
+
+  - job_name: 'cadvisor'
+
+    static_configs:
+      - targets: ['192.168.1.57:8080','192.168.1.220:8080']
+
+  - job_name: 'node'
+    scrape_interval: 8s
+    static_configs:
+      - targets: ['192.168.1.57:9100','192.168.1.220:9100']

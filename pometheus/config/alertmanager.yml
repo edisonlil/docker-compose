@@ -1,0 +1,22 @@
+global:
+  smtp_smarthost: 'smtp@163.com:25'
+  smtp_from: 'xxpupup@163.com'
+  smtp_auth_username: 'xxpupup@163.com'
+  smtp_auth_password: 'XSDCXSEJDKREMTEV'
+  smtp_require_tls: false
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'web.hook'
+receivers:
+  - name: 'web.hook'
+    email_configs:
+      - to: 'xxpupup@163.com'
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']
