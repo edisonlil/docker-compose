@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  canal:
+    image: canal/canal-server:latest
+    ports:
+      - 9100:9100
+      - 11110:11110
+      - 11111:11111
+      - 11112:11112
+    volumes:
+      - ./conf:/home/admin/canal-server/conf
+    environment:
+      canal.destinations: banpai
+      canal.instance.master.address: 115.159.157.148:9306
+      canal.instance.dbUsername: canal
+      canal.instance.dbPassword: canal
+      canal.instance.connectionCharset: UTF-8
+      canal.instance.tsdb.enable: 'true'
+      canal.instance.gtidon: 'false'
+      #canal.instance.filter.regex: '.*\\\\\\..*'
+      #canal.admin.manager: 115.159.157.148:9100
+      canal.admin.port: 9100
+      canal.admin.user: admin
+      canal.admin.passwd: 123456
