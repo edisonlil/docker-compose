@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  master:
+    image: tikazyq/crawlab:latest
+    container_name: master
+    environment:
+      CRAWLAB_SERVER_MASTER: "Y"
+      CRAWLAB_MONGO_HOST: "mongo"
+      CRAWLAB_REDIS_ADDRESS: "redis"
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    depends_on:
+      - mongo
+      - redis
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27013:27017"
+  redis:
+    image: redis:latest
+    restart: always
