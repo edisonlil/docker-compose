@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  kafka-manager:
+    image: sheepkiller/kafka-manager
+    environment:
+      ZK_HOSTS: 115.159.157.148
+    ports:
+      - "9000:9000"
