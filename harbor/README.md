@@ -124,3 +124,11 @@ mkdir -p ./common/config/nginx
 ```
 
 2.将 `nginx`目录下的 `nginx.conf` 文件移至 `./common/config/nginx` 目录下
+
+
+
+3.执行`docker-compose`文件
+
+```
+docker-compose up -d
+```  

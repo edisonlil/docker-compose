@@ -14,3 +14,8 @@ mkdir -p ./svn/svn_config
 
 3.将 `config`目录下的 `logrotate.conf  rsyslog_docker.conf` 文件移至 `./common/config/log` 目录下
 
+
+4.执行`docker-compose`文件
+```
+docker-compose up -d
+```  
