@@ -15,7 +15,7 @@ storage:
     enabled: true
 redis:
   addr: redis:6379
-  password: 
+  password:
   db: 1
 http:
   addr: :5000

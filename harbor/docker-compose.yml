@@ -43,7 +43,7 @@ services:
       - log
     logging:
       driver: "syslog"
-      options:  
+      options:
         syslog-address: "tcp://127.0.0.1:1514"
         tag: "registry"
   registryctl:
@@ -71,7 +71,7 @@ services:
       - log
     logging:
       driver: "syslog"
-      options:  
+      options:
         syslog-address: "tcp://127.0.0.1:1514"
         tag: "registryctl"
   postgresql:
@@ -96,7 +96,7 @@ services:
       - log
     logging:
       driver: "syslog"
-      options:  
+      options:
         syslog-address: "tcp://127.0.0.1:1514"
         tag: "postgresql"
   core:
@@ -134,7 +134,7 @@ services:
       - postgresql
     logging:
       driver: "syslog"
-      options:  
+      options:
         syslog-address: "tcp://127.0.0.1:1514"
         tag: "core"
   portal:
@@ -233,7 +233,7 @@ services:
       - log
     logging:
       driver: "syslog"
-      options:  
+      options:
         syslog-address: "tcp://127.0.0.1:1514"
         tag: "proxy"
 networks:
