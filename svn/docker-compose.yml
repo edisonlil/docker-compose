@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  svn:
+    image: elleflorio/svn-server
+    container_name: svn
+    ports:
+      - "6000:443"
+      - "3690:3690"
+      - "9999:80"
+    volumes:
+      - ./svn/svn_repo/:/data/svn/ #挂載存放版本文件夾
+      - ./svn/svn_config:/etc/subversion/ #挂載存放svn配置文件夾
+      - /etc/localtime:/etc/localtime:ro #主機的時間同步到容器
+    restart: always
