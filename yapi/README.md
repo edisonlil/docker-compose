@@ -1,4 +1,5 @@
-### svn
+# Yapi
+
 
 1.在根目录下创建 `/data/yapi/data/dbo` 目录
 
