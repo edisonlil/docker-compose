@@ -28,7 +28,7 @@ services:
      - /data/rocketmq/broker/logs:/root/logs
      - /data/rocketmq/broker/store:/root/store
      - /data/rocketmq/broker/conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf
-    command: sh mqbroker -c /opt/rocketmq-4.4.0/conf/broker.con
+    command: sh mqbroker -c /opt/rocketmq-4.4.0/conf/broker.conf
     environment:
       NAMESRV_ADDR: 'rmqnamesrv:9876'
       JAVA_OPT_EXT: '-server -Xms1g -Xmx1g -Xmn1g'
