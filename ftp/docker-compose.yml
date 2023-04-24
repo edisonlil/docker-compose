@@ -14,7 +14,7 @@ services:
    - PASV_ADDRESS={Your Host}
   volumes:
    - ./log:/var/log/vsftpd
-   - ./vsftpd:/etc/vsftpd
+   - ./conf/vsftpd:/etc/vsftpd
    - ftp_home:/home/vsftpd
  nginx:
   image: nginx
